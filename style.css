@@ -1,0 +1,862 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --red: #ff1d25;
+  --blue: #1b84d1;
+  --header-bg: rgba(17, 17, 17, 0.78);
+  --text-muted: rgba(255, 255, 255, 0.88);
+  --section-dark: #1f2023;
+  --section-dark-2: #202126;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #0b0b0b;
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* HEADER */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  height: 126px;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--header-bg);
+  backdrop-filter: blur(2px);
+}
+
+.nav-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 44px;
+  height: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.brand img {
+  width: 94px;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  padding-top: 52px;
+}
+
+.nav a {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  transition: 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--red);
+}
+
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 50px;
+}
+
+.nav-social .divider {
+  width: 1px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.35);
+  margin-right: 12px;
+}
+
+.nav-social a {
+  font-size: 1.65rem;
+  color: var(--white);
+  transition: 0.25s ease;
+}
+
+.nav-social a:hover {
+  color: var(--red);
+  transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+}
+
+.heroSwiper,
+.swiper-wrapper,
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.22)),
+    rgba(0, 0, 0, 0.18);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 20px 70px;
+}
+
+.hero-logo {
+  width: min(92vw, 520px);
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.25));
+}
+
+/* SWIPER */
+.hero-arrow {
+  color: #fff !important;
+  width: 54px !important;
+  height: 54px !important;
+  margin-top: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+.hero-arrow::after {
+  font-size: 24px !important;
+  font-weight: 700;
+}
+
+.swiper-button-prev {
+  left: 36px !important;
+}
+
+.swiper-button-next {
+  right: 36px !important;
+}
+
+.hero-pagination {
+  bottom: 28px !important;
+}
+
+.hero-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  opacity: 1;
+  margin: 0 6px !important;
+}
+
+.hero-pagination .swiper-pagination-bullet-active {
+  transform: scale(1.15);
+}
+
+/* MOSAICO */
+.marca-mosaico {
+  width: 100%;
+  background: #111;
+}
+
+.marca-mosaico-grid {
+  display: grid;
+  grid-template-columns: 6% 26% 56% 12%;
+  grid-template-rows: 335px 340px;
+  width: 100%;
+}
+
+.marca-mosaico-grid > div {
+  position: relative;
+  overflow: hidden;
+}
+
+.marca-mosaico-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mm-top-left {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.mm-top-text {
+  grid-column: 2;
+  grid-row: 1;
+  background: var(--section-dark);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 42px 34px 28px;
+}
+
+.mm-top-text-inner {
+  width: 100%;
+  max-width: 215px;
+}
+
+.mm-top-text h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 5rem;
+  line-height: 0.85;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 26px;
+  letter-spacing: 1px;
+}
+
+.mm-top-text p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.mm-top-right {
+  grid-column: 3 / 5;
+  grid-row: 1;
+}
+
+.mm-bottom-left {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.mm-bottom-card {
+  grid-column: 3;
+  grid-row: 2;
+  background: var(--section-dark-2);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 42px 40px 28px;
+}
+
+.mm-bottom-card-inner {
+  width: 100%;
+  max-width: 360px;
+}
+
+.mm-bottom-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.96);
+  margin-bottom: 42px;
+}
+
+.mm-logos-wrap {
+  position: relative;
+  padding-left: 44px;
+}
+
+.mm-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px 20px;
+  align-items: center;
+}
+
+.mm-logos img {
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.mm-logos-top img:nth-child(1) {
+  max-height: 72px;
+}
+
+.mm-logos-top img:nth-child(2) {
+  max-height: 86px;
+}
+
+.mm-logos-top img:nth-child(3) {
+  max-height: 95px;
+}
+
+.mm-logos-bottom img:nth-child(1) {
+  max-height: 28px;
+}
+
+.mm-logos-bottom img:nth-child(2) {
+  max-height: 28px;
+}
+
+.mm-logos-bottom img:nth-child(3) {
+  max-height: 34px;
+}
+
+.mm-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 24px 0 22px;
+}
+
+.mm-detail {
+  position: absolute;
+  left: 0;
+}
+
+.mm-detail span {
+  display: block;
+  height: 5px;
+  transform: skewX(-35deg);
+}
+
+.mm-detail span:first-child {
+  background: var(--red);
+}
+
+.mm-detail span:last-child {
+  background: var(--blue);
+}
+
+.mm-detail-top {
+  top: 18px;
+}
+
+.mm-detail-top span {
+  width: 20px;
+  margin-bottom: 5px;
+}
+
+.mm-detail-bottom {
+  top: 132px;
+  left: -4px;
+  display: flex;
+  gap: 6px;
+}
+
+.mm-detail-bottom span:first-child {
+  width: 38px;
+}
+
+.mm-detail-bottom span:last-child {
+  width: 22px;
+}
+
+.mm-bottom-pattern {
+  grid-column: 4;
+  grid-row: 2;
+  background-image: url("./assets/identidade-fundo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* APP */
+.agende-app {
+  position: relative;
+  min-height: 700px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(12, 12, 12, 0.83), rgba(12, 12, 12, 0.83)),
+    url("./assets/agende-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.agende-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.28), rgba(0,0,0,0.12));
+  z-index: 1;
+}
+
+.agende-stripe {
+  position: absolute;
+  z-index: 2;
+  transform: rotate(-36deg);
+  transform-origin: center;
+  opacity: 1;
+}
+
+.agende-stripe-red {
+  width: 980px;
+  height: 170px;
+  background: var(--red);
+  top: 110px;
+  left: 36%;
+}
+
+.agende-stripe-blue {
+  width: 940px;
+  height: 160px;
+  background: var(--blue);
+  top: 265px;
+  left: 64%;
+}
+
+.agende-grid {
+  position: relative;
+  z-index: 3;
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  align-items: center;
+  gap: 34px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.agende-copy {
+  max-width: 320px;
+}
+
+.agende-copy h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.8rem, 5vw, 5.4rem);
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 42px;
+}
+
+.agende-copy p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 260px;
+  margin-bottom: 46px;
+}
+
+.agende-stores {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.store-badge {
+  display: inline-flex;
+}
+
+.store-badge img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.agende-cards {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-top: 120px;
+}
+
+.agende-card {
+  position: relative;
+  width: 190px;
+  height: 205px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.agende-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.agende-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 24px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.agende-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.barba-icon i {
+  transform: rotate(90deg);
+  font-size: 3.5rem;
+}
+
+.combo-icon {
+  gap: 8px;
+  font-size: 2.4rem;
+}
+
+.combo-icon strong {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.combo-icon i:last-child {
+  transform: rotate(90deg);
+  font-size: 2.8rem;
+}
+
+.agende-card span {
+  display: block;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1200px) {
+  .nav {
+    gap: 22px;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+
+  .brand img {
+    width: 84px;
+  }
+
+  .marca-mosaico-grid {
+    grid-template-columns: 8% 30% 50% 12%;
+    grid-template-rows: 300px 320px;
+  }
+
+  .mm-top-text h2 {
+    font-size: 4.2rem;
+  }
+
+  .agende-grid {
+    grid-template-columns: 290px 1fr;
+  }
+
+  .agende-card {
+    width: 175px;
+  }
+
+  .agende-stripe-red {
+    left: 28%;
+  }
+
+  .agende-stripe-blue {
+    left: 58%;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    height: 110px;
+  }
+
+  .nav-wrap {
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .brand {
+    margin-top: 0;
+  }
+
+  .brand img {
+    width: 72px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav-social {
+    padding-top: 0;
+    gap: 14px;
+  }
+
+  .nav-social .divider {
+    display: none;
+  }
+
+  .nav-social a {
+    font-size: 1.3rem;
+  }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero-content {
+    padding-top: 120px;
+  }
+
+  .hero-logo {
+    width: min(86vw, 420px);
+  }
+
+  .marca-mosaico-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px auto 260px auto;
+  }
+
+  .mm-top-left {
+    display: none;
+  }
+
+  .mm-top-right {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .mm-top-text {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 36px 24px;
+  }
+
+  .mm-top-text-inner {
+    max-width: 100%;
+  }
+
+  .mm-bottom-left {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .mm-bottom-card {
+    grid-column: 1;
+    grid-row: 4;
+    padding: 36px 24px;
+  }
+
+  .mm-bottom-card-inner {
+    max-width: 100%;
+  }
+
+  .mm-bottom-pattern {
+    display: none;
+  }
+
+  .agende-app {
+    min-height: auto;
+  }
+
+  .agende-grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 120px;
+    padding-bottom: 70px;
+  }
+
+  .agende-copy {
+    max-width: 100%;
+  }
+
+  .agende-copy p {
+    max-width: 100%;
+  }
+
+  .agende-cards {
+    padding-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .agende-stripe-red {
+    width: 700px;
+    height: 130px;
+    top: 140px;
+    left: 24%;
+  }
+
+  .agende-stripe-blue {
+    width: 700px;
+    height: 120px;
+    top: 355px;
+    left: 38%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .hero {
+    height: 90vh;
+    min-height: 560px;
+  }
+
+  .hero-logo {
+    width: min(88vw, 320px);
+  }
+
+  .hero-arrow {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .hero-arrow::after {
+    font-size: 18px !important;
+  }
+
+  .swiper-button-prev {
+    left: 12px !important;
+  }
+
+  .swiper-button-next {
+    right: 12px !important;
+  }
+
+  .mm-top-text h2 {
+    font-size: 3.2rem;
+  }
+
+  .mm-top-text p,
+  .mm-bottom-text {
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  .mm-logos-wrap {
+    padding-left: 0;
+  }
+
+  .mm-detail {
+    display: none;
+  }
+
+  .mm-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mm-logos img {
+    max-height: 62px !important;
+  }
+
+  .mm-logos-bottom img {
+    max-height: 28px !important;
+  }
+
+  .agende-app {
+    background-position: center center;
+  }
+
+  .agende-copy h2 {
+    font-size: 3.2rem;
+    margin-bottom: 28px;
+  }
+
+  .agende-copy p {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    margin-bottom: 30px;
+  }
+
+  .store-badge img {
+    height: 48px;
+  }
+
+  .agende-cards {
+    gap: 12px;
+  }
+
+  .agende-card {
+    width: 100%;
+    max-width: 320px;
+    height: 180px;
+  }
+
+  .agende-card span {
+    font-size: 1.8rem;
+  }
+
+  .agende-stripe-red {
+    width: 470px;
+    height: 95px;
+    top: 175px;
+    left: 34%;
+  }
+
+  .agende-stripe-blue {
+    width: 470px;
+    height: 90px;
+    top: 510px;
+    left: 46%;
+  }
+}
