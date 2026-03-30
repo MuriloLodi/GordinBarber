@@ -1297,17 +1297,15 @@
                         <div class="pr-lg-2">
                             <h2 class="font-weight-bold uppercase space-top-lg-1 mb-4">Quem conhece, aprova</h2>
 
-                            <div class="d-flex align-items-center">
-                                <ul class="list-inline mr-2 mb-0">
-                                    <li class="list-inline-item text-warning">
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                    </li>
-                                </ul>
-                                <span class="text-muted">4,9 / 5 | mais de 4.000 avaliações no Google</span>
+                            <div class="reviews-summary">
+                                <div class="reviews-stars" aria-label="Avaliacao media: 4,9 de 5">
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                    <span class="fas fa-star"></span>
+                                </div>
+                                <span class="reviews-summary-text">4,9 / 5 | mais de 4.000 avaliacoes no Google</span>
                             </div>
 
                         </div>
@@ -1326,8 +1324,21 @@
                  }
                }]' data-slides-show="2" data-speed="10000">
                             <div class="js-slide my-4">
-                                <div class="card mb-4">
+                                <div class="card review-card mb-4">
                                     <div class="card-body p-6">
+                                        <div class="review-card-meta">
+                                            <span class="review-google-badge">
+                                                <span class="fab fa-google" aria-hidden="true"></span>
+                                                Avaliacao do Google
+                                            </span>
+                                            <span class="review-mini-stars" aria-hidden="true">
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                            </span>
+                                        </div>
                                         <p>De longe, a melhor experiência de corte que já tive.</p>
                                     </div>
                                 </div>
@@ -1342,8 +1353,21 @@
                                 </div>
                             </div>
                             <div class="js-slide my-4">
-                                <div class="card mb-4">
+                                <div class="card review-card mb-4">
                                     <div class="card-body p-6">
+                                        <div class="review-card-meta">
+                                            <span class="review-google-badge">
+                                                <span class="fab fa-google" aria-hidden="true"></span>
+                                                Avaliacao do Google
+                                            </span>
+                                            <span class="review-mini-stars" aria-hidden="true">
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                            </span>
+                                        </div>
                                         <p>Adoro este lugar! Recomendo muito para quem está procurando uma nova
                                             barbearia.</p>
                                     </div>
@@ -1359,8 +1383,21 @@
                                 </div>
                             </div>
                             <div class="js-slide my-4">
-                                <div class="card mb-4">
+                                <div class="card review-card mb-4">
                                     <div class="card-body p-6">
+                                        <div class="review-card-meta">
+                                            <span class="review-google-badge">
+                                                <span class="fab fa-google" aria-hidden="true"></span>
+                                                Avaliacao do Google
+                                            </span>
+                                            <span class="review-mini-stars" aria-hidden="true">
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                            </span>
+                                        </div>
                                         <p>Corte incrível. Bebidas incríveis. Ambiente incrível.</p>
                                     </div>
                                 </div>
@@ -1375,8 +1412,21 @@
                                 </div>
                             </div>
                             <div class="js-slide my-4">
-                                <div class="card mb-4">
+                                <div class="card review-card mb-4">
                                     <div class="card-body p-6">
+                                        <div class="review-card-meta">
+                                            <span class="review-google-badge">
+                                                <span class="fab fa-google" aria-hidden="true"></span>
+                                                Avaliacao do Google
+                                            </span>
+                                            <span class="review-mini-stars" aria-hidden="true">
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                                <span class="fas fa-star"></span>
+                                            </span>
+                                        </div>
                                         <p>Equipe super simpática e prestativa. O atendimento aqui é sempre nota 10.</p>
                                     </div>
                                 </div>
@@ -2058,6 +2108,89 @@
                     filter: blur(2px);
                 }
 
+                .reviews-summary {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0.55rem;
+                }
+
+                .reviews-stars {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.35rem;
+                    color: #f4b400;
+                    font-size: 1.25rem;
+                    line-height: 1;
+                    white-space: nowrap;
+                }
+
+                .reviews-summary-text {
+                    display: block;
+                    max-width: 22rem;
+                    color: #5f6f83;
+                    font-size: 1.18rem;
+                    font-weight: 500;
+                    line-height: 1.45;
+                }
+
+                .review-card {
+                    border: 1px solid #e2e8f0;
+                    border-radius: 14px;
+                    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
+                }
+
+                .review-card .card-body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .review-card-meta {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.75rem;
+                    flex-wrap: wrap;
+                }
+
+                .review-google-badge {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.45rem;
+                    padding: 0.33rem 0.75rem;
+                    border-radius: 999px;
+                    background: #f1f5fb;
+                    color: #34527f;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+
+                .review-google-badge .fa-google {
+                    color: #4285f4;
+                    font-size: 0.84rem;
+                }
+
+                .review-mini-stars {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.2rem;
+                    color: #f4b400;
+                    font-size: 0.82rem;
+                    line-height: 1;
+                    white-space: nowrap;
+                }
+
+                .review-card p {
+                    margin-bottom: 0;
+                    color: #5f6f83;
+                    font-size: 1.18rem;
+                    line-height: 1.65;
+                }
+
                 @media (max-width: 991.98px) {
                     .client-gallery-section {
                         padding: 4.5rem 0;
@@ -2065,6 +2198,11 @@
 
                     .client-gallery-frame {
                         max-width: 860px;
+                    }
+
+                    .reviews-summary-text,
+                    .review-card p {
+                        font-size: 1.05rem;
                     }
                 }
 
@@ -2086,6 +2224,14 @@
                     .client-gallery-item.is-large .client-gallery-photo,
                     .client-gallery-item.is-small .client-gallery-photo {
                         aspect-ratio: 4 / 5;
+                    }
+
+                    .reviews-stars {
+                        font-size: 1.12rem;
+                    }
+
+                    .review-card-meta {
+                        justify-content: flex-start;
                     }
                 }
 
