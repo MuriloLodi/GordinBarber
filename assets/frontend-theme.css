@@ -23443,7 +23443,9 @@ label.btn {
 }
 
 .ss-logo-main {
-  max-width: 250px;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
 }
 
 .gradient-half-primary-v1.footer-overlay {

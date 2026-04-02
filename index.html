@@ -33,8 +33,8 @@
         property="og:description" />
 
 
-    <link href="https://scissorsscotch.com/static/front/assets/img/scotch/favicon/favicon.ico" rel="icon"
-        type="image/ico" />
+    <link href="./assets/img/secco_caveira_favicon.png" rel="icon" type="image/svg+xml" />
+    <link href="./assets/img/secco_caveira_favicon.png" rel="apple-touch-icon" />
     <style type="text/css">
         .tk-proxima-nova {
             font-family: "proxima-nova", sans-serif;
@@ -232,7 +232,7 @@
                     <a aria-label="Página inicial"
                         class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white"
                         href="javascript:;" aria-disabled="true">
-                        <img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/ss-logo-white.png" />
+                        <img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" />
                     </a>
 
 
@@ -240,14 +240,14 @@
                     <a aria-label="Página inicial"
                         class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-collapsed"
                         href="javascript:;" aria-disabled="true">
-                        <img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/ss-logo-white.png" />
+                        <img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" />
                     </a>
 
 
                     <a aria-label="Página inicial"
                         class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-on-scroll"
                         href="javascript:;" aria-disabled="true">
-                        <img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/ss-logo-white.png" />
+                        <img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" />
                     </a>
 
 
@@ -262,30 +262,25 @@
 
                     <div class="collapse navbar-collapse u-header__navbar-collapse" id="navBar">
                         <ul class="navbar-nav u-header__navbar-nav">
-
-
                             <li class="nav-item u-header__nav-item">
-                                <a class="nav-link u-header__nav-link" href="javascript:;" aria-disabled="true"
-                                    id="homeMegaMenu">Início</a>
+                                <a class="nav-link u-header__nav-link" href="#inicio">Início</a>
                             </li>
-
                             <li class="nav-item u-header__nav-item">
-                                <a class="nav-link u-header__nav-link" href="javascript:;" aria-disabled="true"
-                                    id="homeMegaMenu">Sobre</a>
+                                <a class="nav-link u-header__nav-link" href="#servicos">Serviços</a>
                             </li>
-
                             <li class="nav-item u-header__nav-item">
-                                <a class="nav-link u-header__nav-link" href="javascript:;" aria-disabled="true"
-                                    id="homeMegaMenu">Serviços</a>
+                                <a class="nav-link u-header__nav-link" href="#galeria">Galeria</a>
                             </li>
-
                             <li class="nav-item u-header__nav-item">
-                                <a class="nav-link u-header__nav-link mobile-menu-item" href="javascript:;"
-                                    aria-disabled="true" id="homeMegaMenu">Conta</a>
+                                <a class="nav-link u-header__nav-link" href="#avaliacoes">Avaliações</a>
+                            </li>
+                            <li class="nav-item u-header__nav-item">
+                                <a class="nav-link u-header__nav-link" href="#contato">Contato</a>
                             </li>
                             <li class="nav-item u-header__nav-last-item book-now">
-                                <a class="btn btn-sm btn-outline-secondary text-white-90" href="#bookingModal"
-                                    data-modal-target="#bookingModal">
+                                <a class="btn btn-sm btn-outline-secondary text-white-90"
+                                    href="https://nextgoagenda.com/seccobarber"
+                                    target="_blank" rel="noopener noreferrer">
                                     Agendar
                                 </a>
                             </li>
@@ -529,7 +524,8 @@
                 </div>
 
 
-                <div class="js-login-window u-modal-window" id="bookingModal" style="width: 400px;">
+                <div class="js-login-window u-modal-window booking-modal-legacy" id="bookingModalLegacy"
+                    style="width: 400px; display: none;" hidden aria-hidden="true">
                     <div class="card">
                         <form class="js-validate" novalidate="novalidate">
 
@@ -566,8 +562,9 @@
                                             A UNIDADE ACIMA OU</span>
                                     </div>
                                     <div class="mb-3">
-                                        <a class="btn btn-block btn-primary transition-3d-hover" href="#bookingModal"
-                                            data-modal-target="#bookingModal">Agendar</a>
+                                        <a class="btn btn-block btn-primary transition-3d-hover"
+                                            href="https://nextgoagenda.com/seccobarber"
+                                            target="_blank" rel="noopener noreferrer">Agendar</a>
                                     </div>
                                 </div>
                             </div>
@@ -1123,6 +1120,133 @@
 
     <main class="diamond-background" id="content" role="main">
         <style>
+            /* ── HERO REDESIGN ── */
+            .hero-redesign {
+                position: relative;
+                min-height: 100vh;
+                background: url('./assets/secco.jpeg') center center / cover no-repeat;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .hero-redesign .hero-overlay {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+                background:
+                    linear-gradient(105deg,
+                        rgba(0, 0, 0, 0.92) 0%,
+                        rgba(0, 0, 0, 0.72) 45%,
+                        rgba(0, 0, 0, 0.20) 100%);
+            }
+
+            .hero-content-box {
+                position: relative;
+                z-index: 2;
+                max-width: 700px;
+                padding: 7rem 4vw 7rem 8vw;
+            }
+
+            .hero-eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.65rem;
+                font-size: 0.76rem;
+                font-weight: 700;
+                letter-spacing: 0.28em;
+                text-transform: uppercase;
+                color: #4caf58;
+                margin-bottom: 1.6rem;
+            }
+
+            .hero-eyebrow::before {
+                content: "";
+                display: inline-block;
+                width: 34px;
+                height: 2px;
+                background: #4caf58;
+                flex-shrink: 0;
+            }
+
+            .hero-title {
+                font-size: clamp(3.8rem, 8.5vw, 7.5rem);
+                font-weight: 900;
+                line-height: 0.90;
+                letter-spacing: -0.03em;
+                color: #ffffff;
+                text-transform: uppercase;
+                margin-bottom: 1.75rem;
+            }
+
+            .hero-title-gold {
+                color: #4caf58;
+            }
+
+            .hero-line {
+                display: block;
+                overflow: hidden;
+            }
+
+            /* Scroll progress bar */
+            .scroll-progress-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 3px;
+                width: 100%;
+                background: linear-gradient(90deg, #0c5810, #4caf58);
+                transform-origin: left center;
+                transform: scaleX(0);
+                z-index: 9999;
+                pointer-events: none;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1rem, 1.8vw, 1.15rem);
+                color: rgba(255, 255, 255, 0.72);
+                line-height: 1.70;
+                margin-bottom: 2.75rem;
+                max-width: 440px;
+            }
+
+            .hero-cta-btn {
+                display: inline-flex;
+                align-items: center;
+                background: #0c5810;
+                color: #ffffff !important;
+                font-size: 0.85rem;
+                font-weight: 800;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                text-decoration: none !important;
+                padding: 1.1rem 2.8rem;
+                border-radius: 3px;
+                box-shadow: 0 8px 28px rgba(12, 88, 16, 0.40);
+                transition: background 0.25s ease, transform 0.22s ease, box-shadow 0.25s ease;
+            }
+
+            .hero-cta-btn:hover {
+                background: #07380a;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                transform: translateY(-3px);
+                box-shadow: 0 16px 36px rgba(12, 88, 16, 0.55);
+            }
+
+            @media (max-width: 767px) {
+                .hero-content-box {
+                    padding: 7rem 1.5rem 4rem;
+                    max-width: 100%;
+                }
+                .hero-redesign .hero-overlay {
+                    background: rgba(0, 0, 0, 0.78);
+                }
+                .hero-subtitle {
+                    max-width: 100%;
+                }
+            }
+
             .red-x.top.down {
                 background-image: url(https://scissorsscotch.com/static/ss-assets/front/ss-design/assets/img/scissors-scotch/bg-shapes/red-diamond-s.svg);
                 background-repeat: no-repeat;
@@ -1140,60 +1264,95 @@
             }
         </style>
 
-        <div class="gradient-overlay-half-primary-video-v2 z-index-1" id="videoPoster">
-            <div class="gradient-overlay-half-primary-video-v1 z-index-2 home-background-pic">
-
-                <div class="d-md-block position-absolute w-110 h-100" style="overflow:hidden">
-
-                </div>
-
-                <div class="position-relative z-index-3 home-hero-mt-sm-fix vh-sm-85">
-
-                    <div class="d-md-flex">
-                        <div
-                            class="container d-md-flex align-items-md-center min-height-md-100vh text-center space-3 space-top-md-4 space-top-lg-3">
-                            <div class="row justify-content-md-center w-100 mx-auto">
-                                <div class="col-md-10">
-
-                                    <div class="mt-4 mb-7 mt-sm-4-70px mb-sm-7-194px">
-                                        <h1 class="display-4 text-white font-weight-bold uppercase mb-sm-4 fadeInUp u-in-viewport"
-                                            data-animation="fadeInUp" data-animation-delay="500"
-                                            data-animation-duration="900" style="animation-duration: 900ms;">
-                                            Bem-vindo ao Secco Barber
-                                        </h1>
-                                        <p class="lead text-white mb-5 fadeInUp u-in-viewport" data-animation="fadeInUp"
-                                            data-animation-delay="750" data-animation-duration="900"
-                                            style="animation-duration: 900ms;">
-                                            Ou, como gostamos de chamar, a melhor parte do seu dia.
-                                        </p>
-                                        <a class="btn btm-lg btn-wide btn-secondary text-white-90 fadeInUp u-in-viewport"
-                                            href="#bookingModal" data-modal-target="#bookingModal"
-                                            style="animation-duration: 900ms;">Agendar</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="position-absolute right-0 bottom-0 left-0 mb-4 sm-pos-relative" style="bottom: 2rem;">
-                        <div class="container text-center">
-
-                            <p class="lead text-white fadeInUp u-in-viewport" data-animation="fadeInUp"
-                                data-animation-delay="1250" data-animation-duration="900"
-                                style="animation-duration: 900ms;">A menos que você tenha ganhado na loteria ou algo do
-                                tipo. Aí, provavelmente, ficamos em segundo lugar.</p>
-
-
-                        </div>
-                    </div>
-
-                </div>
+        <div id="inicio" class="hero-redesign">
+            <div class="hero-overlay"></div>
+            <div class="hero-content-box">
+                <span class="hero-eyebrow">Toledo &middot; Paran&aacute;</span>
+                <h1 class="hero-title">
+                    <span class="hero-line">Corte.</span>
+                    <span class="hero-line hero-title-gold">Estilo.</span>
+                    <span class="hero-line">Atitude.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Ambiente descontra&iacute;do, cerveja gelada e um visual que faz voc&ecirc; sair diferente. Bem-vindo ao Secco Barber.
+                </p>
+                <a class="hero-cta-btn"
+                    href="https://nextgoagenda.com/seccobarber"
+                    target="_blank" rel="noopener noreferrer">
+                    Agendar agora
+                </a>
             </div>
         </div>
 
-        <div class="container text-center space-3">
+        <section class="services-showcase" id="servicos">
+            <div class="container">
+                <div class="services-showcase-header text-center mx-auto">
+                    <h2 class="display-4 font-weight-bold mb-4">Escolha o atendimento ideal para o seu estilo</h2>
+                    <p class="lead mb-0">Atendimentos pensados para deixar seu visual sempre no ponto certo.</p>
+                </div>
+
+                <div class="services-list">
+                    <div class="service-row">
+                        <span class="service-num">01</span>
+                        <div class="service-info">
+                            <h3 class="service-title">Corte + Barba</h3>
+                            <p class="service-desc">O combo perfeito para quem quer sair com o visual completo e a barba impecável.</p>
+                        </div>
+                        <a class="service-book"
+                            href="https://nextgoagenda.com/seccobarber"
+                            target="_blank" rel="noopener noreferrer">Agendar</a>
+                    </div>
+                    <div class="service-row">
+                        <span class="service-num">02</span>
+                        <div class="service-info">
+                            <h3 class="service-title">Corte Tradicional</h3>
+                            <p class="service-desc">T&eacute;cnica cl&aacute;ssica executada com precis&atilde;o e cuidado por quem entende do of&iacute;cio.</p>
+                        </div>
+                        <a class="service-book"
+                            href="https://nextgoagenda.com/seccobarber"
+                            target="_blank" rel="noopener noreferrer">Agendar</a>
+                    </div>
+                    <div class="service-row">
+                        <span class="service-num">03</span>
+                        <div class="service-info">
+                            <h3 class="service-title">Barba Premium</h3>
+                            <p class="service-desc">Contorno e acabamento profissional para uma barba sempre no ponto certo.</p>
+                        </div>
+                        <a class="service-book"
+                            href="https://nextgoagenda.com/seccobarber"
+                            target="_blank" rel="noopener noreferrer">Agendar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="red-logo top red-logo-mt-fix"></div>
+
+
+        <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll animation-engine-js loaded dzsprx-readyall"
+            data-options='{direction: "normal"}'>
+
+            <div class="divimage dzsparallaxer--target"
+                style='height: 130%; background-image: url("assets/secco.jpeg"); transform: translate3d(0px, -134.788px, 0px);'>
+            </div>
+
+            <div class="container text-center space-4 space-top-4 z-index-3">
+                <a class="js-fancybox d-inline-block u-media-player" data-animate-in="zoomIn" data-animate-out="zoomOut"
+                    data-caption="Secco Barber: Faça um favor a si mesmo" data-speed="700"
+                    data-src="https://www.youtube.com/watch?v=C7D5lEVxeSM" href="javascript:;">
+                    <span class="u-media-player__icon u-media-player__icon--lg">
+                        <span class="fas fa-play u-media-player__icon-inner"></span>
+                    </span>
+                </a>
+            </div>
+
+            <br />
+        </div>
+
+
+        <div class="red-logo top red-logo-mt-fix"></div>
+
+        <div class="container text-center space-3 services-legacy-block" aria-hidden="true" hidden>
 
             <div class="mx-auto mb-7">
                 <span class="rocks-glass mb-4"></span>
@@ -1237,10 +1396,11 @@
 
         </div>
 
-        <section class="">
+        <section id="galeria" style="margin-top: 60px;">
             <div class="container">
                 <div class="client-gallery-header text-center">
-                    <h2 class="client-gallery-title">Clientes</h2>
+                    <span class="client-gallery-eyebrow">Galeria</span>
+                    <h2 class="client-gallery-title">Resultados que falam<br>por si só</h2>
                 </div>
 
                 <div class="client-gallery-frame">
@@ -1290,7 +1450,7 @@
 
         <div class="red-x top-2 mb-n5"></div>
 
-        <div class="position-relative">
+        <div class="position-relative" id="avaliacoes">
             <div class="container space-3 position-relative z-index-2 reviews-fix">
                 <div class="row">
                     <div class="col-lg-4 mb-7 mb-lg-0">
@@ -1305,7 +1465,7 @@
                                     <span class="fas fa-star"></span>
                                     <span class="fas fa-star"></span>
                                 </div>
-                                <span class="reviews-summary-text">4,9 / 5 | mais de 4.000 avaliacoes no Google</span>
+                                <span class="reviews-summary-text">4,9 / 5 | mais de 50 avaliacoes no Google</span>
                             </div>
 
                         </div>
@@ -1344,11 +1504,12 @@
                                 </div>
                                 <div class="media ml-6">
                                     <div class="u-avatar mr-3">
-                                        <img alt="Foto de Jay Simpson" class="img-fluid rounded-circle"
+                                        <img alt="Foto de Gilmarzinhocantor Cantor" class="img-fluid rounded-circle"
                                             src="./assets/men-profile-pic1.png" />
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="h6 mb-0">Jay Simpson</h4>
+                                        <h4 class="h6 mb-0">Gilmarzinhocantor Cantor</h4>
+                                        <small class="text-muted">Local Guide</small>
                                     </div>
                                 </div>
                             </div>
@@ -1374,11 +1535,11 @@
                                 </div>
                                 <div class="media ml-6">
                                     <div class="u-avatar mr-3">
-                                        <img alt="Foto de Marquis Roy" class="img-fluid rounded-circle"
+                                        <img alt="Foto de Pedro Feder" class="img-fluid rounded-circle"
                                             src="./assets/men-profile-pic2.png" />
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="h6 mb-0">Marquis Roy</h4>
+                                        <h4 class="h6 mb-0">Pedro Feder</h4>
                                     </div>
                                 </div>
                             </div>
@@ -1403,11 +1564,11 @@
                                 </div>
                                 <div class="media ml-6">
                                     <div class="u-avatar mr-3">
-                                        <img alt="Foto de Damien Flores" class="img-fluid rounded-circle"
+                                        <img alt="Foto de Edson Santos" class="img-fluid rounded-circle"
                                             src="./assets/img3.jpg" />
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="h6 mb-0">Damien Flores</h4>
+                                        <h4 class="h6 mb-0">Edson Santos</h4>
                                     </div>
                                 </div>
                             </div>
@@ -1432,11 +1593,12 @@
                                 </div>
                                 <div class="media ml-6">
                                     <div class="u-avatar mr-3">
-                                        <img alt="Foto de Alex Miles" class="img-fluid rounded-circle"
+                                        <img alt="Foto de Samuel Weiss" class="img-fluid rounded-circle"
                                             src="./assets/img4.jpg" />
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="h6 mb-0">Alex Miles</h4>
+                                        <h4 class="h6 mb-0">Samuel Weiss</h4>
+                                        <small class="text-muted">Local Guide</small>
                                     </div>
                                 </div>
                             </div>
@@ -1446,228 +1608,192 @@
             </div>
         </div>
 
-        <div class="red-logo top red-logo-mt-fix"></div>
-
-
-        <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll animation-engine-js loaded dzsprx-readyall"
-            data-options='{direction: "normal"}'>
-
-            <div class="divimage dzsparallaxer--target"
-                style='height: 130%; background-image: url("assets/secco.jpeg"); transform: translate3d(0px, -134.788px, 0px);'>
-            </div>
-
-            <div class="container text-center space-4 space-top-4 z-index-3">
-                <a class="js-fancybox d-inline-block u-media-player" data-animate-in="zoomIn" data-animate-out="zoomOut"
-                    data-caption="Secco Barber: Faça um favor a si mesmo" data-speed="700"
-                    data-src="https://www.youtube.com/watch?v=C7D5lEVxeSM" href="javascript:;">
-                    <span class="u-media-player__icon u-media-player__icon--lg">
-                        <span class="fas fa-play u-media-player__icon-inner"></span>
-                    </span>
-                </a>
-            </div>
-
-            <br />
-        </div>
-
-
-        <div class="red-logo top red-logo-mt-fix"></div>
-
-        <div class="container space-2">
-            <div class="mx-auto mb-5 text-center">
-                <span class="scissors mb-4"></span>
-                <h1 class="display-4 font-weight-bold uppercase">Faça um favor a si mesmo</h1>
-                <p class="lead">Secco Barber é a experiência de cuidado masculino que todo homem merece, onde a
-                    barbearia tradicional e os serviços modernos se encontram com o seu lugar favorito para relaxar.
-                    Sente-se, relaxe, cuide do visual e depois aproveite um drink, um café ou uma cerveja gelada no
-                    nosso lounge privativo.</p>
-            </div>
-            <div class="text-center">
-                <div class="text-center mb-5">
-                    <span class="u-divider u-divider--text">Sua unidade mais próxima:</span>
+        <section class="lounge-cta-section">
+            <div class="lounge-cta-overlay"></div>
+            <div class="lounge-cta-inner">
+                <div class="lounge-cta-content">
+                    <h2 class="lounge-cta-title">
+                        Se voc&ecirc; gosta de um
+                        <span class="lounge-cta-highlight">ambiente descontra&iacute;do, cerveja gelada, boas
+                            amizades</span>
+                        e ainda sair com aquele tapa no visual, este &eacute; o seu lugar!
+                    </h2>
+                    <a class="lounge-cta-button"
+                        href="https://nextgoagenda.com/seccobarber"
+                        target="_blank" rel="noopener noreferrer">Agendar agora</a>
                 </div>
-                <ul class="list-inline mb-5">
-                    <li class="list-inline-item mr-0">
-                        <div class="d-flex align-items-center ml-n2">
-                            <span
-                                class="fas fa-map-marker-alt text-secondary mr-2 map-marker modal-size map-marker-custom"></span>
-                            <a data-modal-target="#bookingModal" href="#bookingModal">
-                                <h5 class="d-sm-inline-block font-weight-bold">Toledo, PR</h5>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
             </div>
+        </section>
 
-            <div class="row justify-content-between align-items-center">
-                <div class="col-lg-5 mb-7 mb-lg-0">
-                    <div class="mb-5 mobile-center">
-                        <h3 class="font-weight-bold uppercase">Venha pelo cuidado. Fique pelas bebidas.</h3>
-                        <p>Na Secco Barber, você encontra gente talentosa e acolhedora, uma seleção impressionante de
-                            serviços e um bar totalmente abastecido. Em resumo: a melhor parte do seu dia.</p>
+        <div id="contato" class="secco-about-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <span class="secco-about-eyebrow">Contato</span>
+                        <h2 class="secco-about-title">Faça um favor<br>a si mesmo</h2>
+                        <p class="secco-about-lead">Secco Barber é onde a barbearia tradicional encontra o seu lugar favorito para relaxar. Ambiente descontraído, cerveja gelada e um corte que transforma.</p>
+                        <ul class="secco-info-list">
+                            <li>
+                                <span class="fas fa-map-marker-alt"></span>
+                                <div>
+                                    <strong>Toledo, PR</strong><br>
+                                    <a href="https://www.google.com/maps?q=R.%20Tr%C3%AAs%20de%20Outubro%2C%20273%20-%20Vila%20Industrial%2C%20Toledo%20-%20PR%2C%2085904-180" target="_blank" rel="noopener noreferrer">R. Três de Outubro, 273 — Vila Industrial</a>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="fas fa-phone"></span>
+                                <div><a href="tel:+5545999858636">(45) 99985-8636</a></div>
+                            </li>
+                            <li>
+                                <span class="fas fa-clock"></span>
+                                <div>
+                                    Seg: 13:30–19:00<br>
+                                    Ter–Sex: 07:30–20:00<br>
+                                    Sáb: 06:30–13:00<br>
+                                    Dom: Fechado
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-
-                    <ul class="list-unstyled">
-                        <li class="media pb-3">
-                            <span class="fas fa-map-marker-alt fa-lg text-secondary mr-4"
-                                style="width: 21px;margin-top: 5px;"></span>
-                            <div class="media-body">
-                                <h6><strong>Toledo, PR</strong></h6>
-                            </div>
-                        </li>
-                        <li class="media pb-3">
-                            <span class="fas fa-car-building fa-lg text-secondary mr-4 pt-1-5"
-                                style="width: 21px; margin-top: 5px"></span>
-                            <div class="media-body">
-                                <p class="mb-0 text-body">R. Três de Outubro, 273 - Vila Industrial<br />
-                                    Toledo - PR, 85904-180</p>
-                            </div>
-                        </li>
-                        <li class="media py-3">
-                            <span class="fas fa-phone fa-lg text-secondary mr-4 pt-1-5"
-                                style="width: 21px; margin-top: 4px"></span>
-                            <div class="media-body">
-                                <a class="mb-0" href="tel:+5545999858636">(45) 99985-8636</a>
-                            </div>
-                        </li>
-                        <li class="media py-3">
-                            <span class="fas fa-clock fa-lg text-secondary mr-4 pt-1"
-                                style="width: 21px; margin-top: 3px"></span>
-                            <div class="media-body">
-                                <p class="mb-0 text-body">
-
-
-                                    Segunda-feira // 13:30-19:00<br />
-
-
-
-                                    Terça-feira // 07:30-20:00<br />
-
-
-
-                                    Quarta-feira // 07:30-20:00<br />
-
-
-
-                                    Quinta-feira // 07:30-20:00<br />
-
-
-
-                                    Sexta-feira // 07:30-20:00<br />
-
-
-
-                                    Sábado // 06:30-13:00<br />
-
-
-
-                                    Domingo // Fechado<br />
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-
-                </div>
-                <div class="col-lg-7 order-lg-2">
-
-
-
-                    <div id="map" style="position: relative; overflow: hidden;"></div>
+                    <div class="col-lg-7">
+                        <iframe id="map" title="Mapa da Secco Barber"
+                            src="https://www.google.com/maps?q=Secco+Barbearia,+R.+Tr%C3%AAs+de+Outubro,+273,+Vila+Industrial,+Toledo,+PR,+85904-180&output=embed"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+                            style="border:0;"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
+
 
     </main>
 
 
 
+    <style>
+        .secco-about-section {
+            padding: 5.5rem 0;
+            background: #ffffff;
+        }
+        .secco-about-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #0c5810;
+            margin-bottom: 1.25rem;
+        }
+        .secco-about-eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 28px;
+            height: 2px;
+            background: #0c5810;
+        }
+        .secco-about-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: #111111;
+            margin-bottom: 1.25rem;
+        }
+        .secco-about-lead {
+            font-size: 1.05rem;
+            color: #5f6f83;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .secco-info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+        .secco-info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 0.97rem;
+            color: #374151;
+        }
+        .secco-info-list li .fas {
+            color: #0c5810;
+            margin-top: 3px;
+            flex-shrink: 0;
+            width: 16px;
+        }
+        .secco-info-list a {
+            color: #374151;
+        }
+        .secco-info-list a:hover {
+            color: #0c5810;
+        }
+        #map {
+            width: 100%;
+            height: 420px;
+            border-radius: 12px;
+            display: block;
+        }
+        @media (max-width: 767px) {
+            #map { height: 280px; }
+        }
+    </style>
+
     <footer class="gradient-half-primary-v1 footer-overlay" style="position: relative;">
         <div class="container space-top-2 space-bottom-1">
             <div class="row justify-content-lg-start mb-7">
                 <div class="col-sm-9 col-lg-4 mb-7">
-
-                    <a class="d-inline-flex align-items-center mb-3" href="javascript:;" aria-disabled="true">
-                        <img class="ss-logo-main" src="./assets/ss-logo-white.png" />
+                    <a class="d-inline-flex align-items-center mb-3" href="#inicio">
+                        <img class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" />
                     </a>
-
-                    <p class="small text-white-70">Secco Barber é a experiência de cuidado masculino que todo homem
-                        merece, onde a barbearia tradicional e os serviços modernos se encontram com o seu lugar
-                        favorito para relaxar. Sente-se, relaxe, cuide do visual e depois aproveite um drink, um café ou
-                        uma cerveja gelada no nosso lounge privativo.</p>
+                    <p class="small text-white-70">Secco Barber é onde a barbearia tradicional encontra o seu lugar favorito para relaxar. Ambiente descontraído, cerveja gelada e um corte que transforma.</p>
                 </div>
+
                 <div class="col-6 col-sm-4 col-lg-2 ml-lg-auto mb-4">
-                    <h3 class="h6 text-white">Conta</h3>
-
-                    <ul
-                        class="list-group list-group-transparent list-group-white list-group-flush list-group-borderless mb-0">
-                        <li><a class="list-group-item list-group-item-action" href="#bookingModal"
-                                data-modal-target="#bookingModal">Agendar</a></li>
-                        <li><a class="list-group-item list-group-item-action" href="javascript:;"
-                                aria-disabled="true">Conta</a></li>
-                        <li><a class="list-group-item list-group-item-action" href="javascript:;"
-                                aria-disabled="true">Agendamentos</a></li>
+                    <h3 class="h6 text-white">Navegação</h3>
+                    <ul class="list-group list-group-transparent list-group-white list-group-flush list-group-borderless mb-0">
+                        <li><a class="list-group-item list-group-item-action" href="#inicio">Início</a></li>
+                        <li><a class="list-group-item list-group-item-action" href="#servicos">Serviços</a></li>
+                        <li><a class="list-group-item list-group-item-action" href="#galeria">Galeria</a></li>
+                        <li><a class="list-group-item list-group-item-action" href="#avaliacoes">Avaliações</a></li>
+                        <li><a class="list-group-item list-group-item-action" href="#contato">Contato</a></li>
                     </ul>
-
                 </div>
-                <div class="col-6 col-sm-4 col-lg-2 mb-4">
-                    <h3 class="h6 text-white">Empresa</h3>
 
-                    <ul
-                        class="list-group list-group-transparent list-group-white list-group-flush list-group-borderless mb-0">
-                        <li><a class="list-group-item list-group-item-action" href="javascript:;"
-                                aria-disabled="true">Serviços</a></li>
-                        <li><a class="list-group-item list-group-item-action" href="javascript:;"
-                                aria-disabled="true">Planos</a></li>
-                        <li><a class="list-group-item list-group-item-action" href="#careersModal"
-                                data-modal-target="#careersModal">Carreiras</a></li>
+                <div class="col-6 col-sm-4 col-lg-3 mb-4">
+                    <h3 class="h6 text-white">Contato</h3>
+                    <ul class="list-group list-group-transparent list-group-white list-group-flush list-group-borderless mb-0">
+                        <li><a class="list-group-item list-group-item-action" href="https://www.google.com/maps?q=R.+Tr%C3%AAs+de+Outubro,+273,+Toledo,+PR" target="_blank" rel="noopener noreferrer">R. Três de Outubro, 273 — Toledo, PR</a></li>
+                        <li><a class="list-group-item list-group-item-action" href="tel:+5545999858636">(45) 99985-8636</a></li>
+                        <li><span class="list-group-item" style="background:transparent;color:rgba(255,255,255,.7);padding-left:0;font-size:0.9rem;">Seg: 13:30–19h | Ter–Sex: 07:30–20h</span></li>
+                        <li><span class="list-group-item" style="background:transparent;color:rgba(255,255,255,.7);padding-left:0;font-size:0.9rem;">Sáb: 06:30–13h | Dom: Fechado</span></li>
                     </ul>
-
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2 mb-4">
-                    <h3 class="h6 text-white">Recursos</h3>
-
-                    <ul
-                        class="list-group list-group-transparent list-group-white list-group-flush list-group-borderless mb-0">
-                        <li><a class="list-group-item list-group-item-action" href="javascript:;"
-                                aria-disabled="true">Franquias</a></li>
-                        <li><a class="list-group-item list-group-item-action" href="javascript:;"
-                                aria-disabled="true">Grupos &amp; eventos</a></li>
-                        <li><a class="list-group-item list-group-item-action" href="javascript:;"
-                                aria-disabled="true">Contato</a></li>
-                    </ul>
-
                 </div>
             </div>
+
             <div class="row align-items-center">
                 <div class="col-sm-6 mb-3 mb-sm-0">
-
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item">
-                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="javascript:;"
-                                aria-disabled="true" rel="nofollow">
-                                <span class="fab fa-facebook-f btn-icon__inner"></span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="javascript:;"
-                                aria-disabled="true" rel="nofollow">
+                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="https://www.instagram.com/seccobarber" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram">
                                 <span class="fab fa-instagram btn-icon__inner"></span>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="javascript:;"
-                                aria-disabled="true" rel="nofollow">
-                                <span class="fab fa-twitter btn-icon__inner"></span>
+                            <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="https://wa.me/5545999858636" target="_blank" rel="noopener noreferrer nofollow" aria-label="WhatsApp">
+                                <span class="fab fa-whatsapp btn-icon__inner"></span>
                             </a>
                         </li>
                     </ul>
-
                 </div>
                 <div class="col-sm-6 text-sm-right">
-
-                    <p class="small text-white-70 mb-0">Ã‚Â© 2026 Scissors &amp; Scotch. Todos os direitos reservados.
-                        <a class="text-white-70" href="javascript:;" aria-disabled="true">Termos.</a>
-                    </p>
-
+                    <p class="small text-white-70 mb-0">© 2026 Secco Barber. Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>
@@ -1758,495 +1884,610 @@
         $(document).on('ready', function () {
             $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
             $.HSCore.components.HSVideoPlayer.init('.js-inline-video-player');
-            var typed = new Typed('.js-typed', {
-                strings: ["criadores de bons dias.", "contadores de histórias.", "parceiros de mesa.", "dançarinos de carro.", "abraçadores de grupo."],
-                typeSpeed: 30,
-                loop: true,
-                backSpeed: 30,
-                backDelay: 2500
-            });
-
-            const clientGallerySlots = Array.from(document.querySelectorAll('[data-client-gallery-slot]'));
-
-            if (clientGallerySlots.length) {
-                const clientGalleryPool = [
-                    { src: './assets/men-profile-pic2.png', alt: 'Cliente sorrindo após o atendimento' },
-                    { src: './assets/img4.jpg', alt: 'Cliente com cabelo curto e barba aparada' },
-                    { src: './assets/men-profile-pic1.png', alt: 'Cliente com corte moderno e barba alinhada' },
-                    { src: './assets/img3.jpg', alt: 'Cliente com corte finalizado' },
-                    { src: './assets/elite-educators-cropped.jpg', alt: 'Equipe da barbearia em destaque' },
-                    { src: './assets/slide-1.jpg', alt: 'Ambiente interno da barbearia' },
-                    { src: './assets/secco.jpeg', alt: 'Interior da Secco Barbearia' },
-                    { src: './assets/seccco.jpeg', alt: 'Fachada da Secco Barbearia' },
-                    { src: './assets/img3.jpg', alt: 'Cliente satisfeito com o resultado' },
-                    { src: './assets/men-profile-pic2.png', alt: 'Cliente em close após o atendimento' },
-                    { src: './assets/img4.jpg', alt: 'Cliente com visual renovado' },
-                    { src: './assets/men-profile-pic1.png', alt: 'Cliente em retrato frontal' }
-                ];
-
-                let nextGallerySlot = 0;
-                let nextGalleryImage = 9;
-
-                const applyGalleryImage = (slot, item) => {
-                    const image = slot.querySelector('.client-gallery-photo');
-
-                    if (!image) return;
-
-                    image.setAttribute('src', item.src);
-                    image.setAttribute('alt', item.alt);
-                };
-
-                const getNextGalleryItem = (currentSrc) => {
-                    let attempts = 0;
-
-                    while (attempts < clientGalleryPool.length) {
-                        const item = clientGalleryPool[nextGalleryImage % clientGalleryPool.length];
-                        nextGalleryImage += 1;
-                        attempts += 1;
-
-                        if (item.src !== currentSrc || attempts === clientGalleryPool.length) {
-                            return item;
-                        }
-                    }
-
-                    return clientGalleryPool[0];
-                };
-
-                window.setInterval(function () {
-                    const slot = clientGallerySlots[nextGallerySlot % clientGallerySlots.length];
-                    const image = slot.querySelector('.client-gallery-photo');
-
-                    if (!slot || !image) return;
-
-                    const nextItem = getNextGalleryItem(image.getAttribute('src'));
-
-                    slot.classList.add('is-rotating');
-
-                    window.setTimeout(function () {
-                        applyGalleryImage(slot, nextItem);
-                        slot.classList.remove('is-rotating');
-                    }, 220);
-
-                    nextGallerySlot = (nextGallerySlot + 1) % clientGallerySlots.length;
-                }, 1700);
+            if (document.querySelector('.js-typed')) {
+                var typed = new Typed('.js-typed', {
+                    strings: ["criadores de bons dias.", "contadores de histórias.", "parceiros de mesa.", "dançarinos de carro.", "abraçadores de grupo."],
+                    typeSpeed: 30,
+                    loop: true,
+                    backSpeed: 30,
+                    backDelay: 2500
+                });
             }
+
 
         });
     </script>
 
-    <script defer src="./assets/js/google-loader.js"></script>
-    <script defer src="./assets/js/google-common.js"></script>
-    <script defer src="./assets/js/google-util.js"></script>
-    <script defer src="./assets/js/google-map.js"></script>
-    <script defer src="./assets/js/google-marker.js"></script>
-    <script defer src="./assets/js/google-controls.js"></script>
-    <script defer src="./assets/js/google-onion.js"></script>
+    <style>
+        .client-gallery-section {
+            padding: 5.5rem 0 5rem;
+            background: #ffffff;
+        }
 
+        .client-gallery-header {
+            margin-bottom: 2.5rem;
+        }
 
+        .client-gallery-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #0c5810;
+            margin-bottom: 0.75rem;
+        }
 
-    <div data-lat="-24.714701" id="lat">
-        <div data-lng="-53.7442872" id="lng">
-            <script>
+        .client-gallery-title {
+            margin-bottom: 0;
+            color: #111111;
+            font-size: clamp(2.1rem, 4vw, 3.25rem);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+        }
 
-                function initMap() {
-                    var closest_shop_lat = $('#lat').data("lat");
-                    var closest_shop_lng = $('#lng').data("lng");
-                    const ssmap = {
-                        lat: closest_shop_lat,
-                        lng: closest_shop_lng
-                    };
-                    const map = new google.maps.Map(document.getElementById("map"), {
-                        zoom: 14,
-                        center: ssmap,
-                        styles: [{
-                            "featureType": "all",
-                            "elementType": "labels.text.fill",
-                            "stylers": [{
-                                "saturation": 36
-                            },
-                            {
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 40
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "all",
-                            "elementType": "labels.text.stroke",
-                            "stylers": [{
-                                "visibility": "on"
-                            },
-                            {
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 16
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "all",
-                            "elementType": "labels.icon",
-                            "stylers": [{
-                                "visibility": "off"
-                            }]
-                        },
-                        {
-                            "featureType": "administrative",
-                            "elementType": "geometry.fill",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 20
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "administrative",
-                            "elementType": "geometry.stroke",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 17
-                            },
-                            {
-                                "weight": 1.2
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "landscape",
-                            "elementType": "geometry",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 20
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "poi",
-                            "elementType": "geometry",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 21
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "road.highway",
-                            "elementType": "geometry.fill",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 17
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "road.highway",
-                            "elementType": "geometry.stroke",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 29
-                            },
-                            {
-                                "weight": 0.2
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "road.arterial",
-                            "elementType": "geometry",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 18
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "road.local",
-                            "elementType": "geometry",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 16
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "transit",
-                            "elementType": "geometry",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 19
-                            }
-                            ]
-                        },
-                        {
-                            "featureType": "water",
-                            "elementType": "geometry",
-                            "stylers": [{
-                                "color": "#000000"
-                            },
-                            {
-                                "lightness": 17
-                            }
-                            ]
-                        },
-                        ],
-                    });
-                    const marker = new google.maps.Marker({
-                        position: ssmap,
-                        map: map,
-                    });
-                }
-            </script>
-            <style>
-                .client-gallery-section {
-                    padding: 5.5rem 0 5rem;
-                    background: #ffffff;
-                }
+        .client-gallery-frame {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
 
-                .client-gallery-header {
-                    margin-bottom: 2.5rem;
-                }
+        .client-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 10px;
+        }
 
-                .client-gallery-title {
-                    margin-bottom: 0;
-                    color: #111111;
-                    font-size: clamp(2.1rem, 4vw, 3.25rem);
-                    font-weight: 700;
-                    letter-spacing: 0.02em;
-                }
+        .client-gallery-item {
+            margin: 0;
+            overflow: hidden;
+            background: #f3f3f3;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
 
-                .client-gallery-frame {
-                    max-width: 1120px;
-                    margin: 0 auto;
-                }
+        .client-gallery-item.is-large {
+            grid-column: span 2;
+        }
 
-                .client-gallery-grid {
-                    display: grid;
-                    grid-template-columns: repeat(6, minmax(0, 1fr));
-                    gap: 10px;
-                }
+        .client-gallery-item.is-small {
+            grid-column: span 1;
+        }
 
-                .client-gallery-item {
-                    margin: 0;
-                    overflow: hidden;
-                    background: #f3f3f3;
-                    transition: opacity 0.35s ease, transform 0.35s ease;
-                }
+        .client-gallery-photo {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.03);
+            transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+        }
 
-                .client-gallery-item.is-large {
-                    grid-column: span 2;
-                }
+        .client-gallery-item.is-large .client-gallery-photo {
+            aspect-ratio: 5 / 7;
+        }
 
-                .client-gallery-item.is-small {
-                    grid-column: span 1;
-                }
+        .client-gallery-item.is-small .client-gallery-photo {
+            aspect-ratio: 1 / 1;
+        }
 
-                .client-gallery-photo {
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transform: scale(1.03);
-                    transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
-                }
+        .client-gallery-item.focus-left .client-gallery-photo {
+            object-position: left center;
+        }
 
-                .client-gallery-item.is-large .client-gallery-photo {
-                    aspect-ratio: 5 / 7;
-                }
+        .client-gallery-item.focus-center .client-gallery-photo {
+            object-position: center center;
+        }
 
-                .client-gallery-item.is-small .client-gallery-photo {
-                    aspect-ratio: 1 / 1;
-                }
+        .client-gallery-item.focus-right .client-gallery-photo {
+            object-position: right center;
+        }
 
-                .client-gallery-item.focus-left .client-gallery-photo {
-                    object-position: left center;
-                }
+        .client-gallery-item.focus-top .client-gallery-photo {
+            object-position: center top;
+        }
 
-                .client-gallery-item.focus-center .client-gallery-photo {
-                    object-position: center center;
-                }
+        .client-gallery-item.focus-bottom .client-gallery-photo {
+            object-position: center bottom;
+        }
 
-                .client-gallery-item.focus-right .client-gallery-photo {
-                    object-position: right center;
-                }
+        .client-gallery-item.is-rotating {
+            transform: scale(0.985);
+        }
 
-                .client-gallery-item.focus-top .client-gallery-photo {
-                    object-position: center top;
-                }
+        .client-gallery-item.is-rotating .client-gallery-photo {
+            opacity: 0.15;
+            transform: scale(1.08);
+            filter: blur(2px);
+        }
 
-                .client-gallery-item.focus-bottom .client-gallery-photo {
-                    object-position: center bottom;
-                }
+        .reviews-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.55rem;
+        }
 
-                .client-gallery-item.is-rotating {
-                    transform: scale(0.985);
-                }
+        .reviews-stars {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #f4b400;
+            font-size: 1.25rem;
+            line-height: 1;
+            white-space: nowrap;
+        }
 
-                .client-gallery-item.is-rotating .client-gallery-photo {
-                    opacity: 0.15;
-                    transform: scale(1.08);
-                    filter: blur(2px);
-                }
+        .reviews-summary-text {
+            display: block;
+            max-width: 22rem;
+            color: #5f6f83;
+            font-size: 1.18rem;
+            font-weight: 500;
+            line-height: 1.45;
+        }
 
-                .reviews-summary {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 0.55rem;
-                }
+        .review-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
+        }
 
-                .reviews-stars {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 0.35rem;
-                    color: #f4b400;
-                    font-size: 1.25rem;
-                    line-height: 1;
-                    white-space: nowrap;
-                }
+        .review-card .card-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
 
-                .reviews-summary-text {
-                    display: block;
-                    max-width: 22rem;
-                    color: #5f6f83;
-                    font-size: 1.18rem;
-                    font-weight: 500;
-                    line-height: 1.45;
-                }
+        .review-card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
 
-                .review-card {
-                    border: 1px solid #e2e8f0;
-                    border-radius: 14px;
-                    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
-                }
+        .review-google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.33rem 0.75rem;
+            border-radius: 999px;
+            background: #f1f5fb;
+            color: #34527f;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
 
-                .review-card .card-body {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                }
+        .review-google-badge .fa-google {
+            color: #4285f4;
+            font-size: 0.84rem;
+        }
 
-                .review-card-meta {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 0.75rem;
-                    flex-wrap: wrap;
-                }
+        .review-mini-stars {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            color: #f4b400;
+            font-size: 0.82rem;
+            line-height: 1;
+            white-space: nowrap;
+        }
 
-                .review-google-badge {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 0.45rem;
-                    padding: 0.33rem 0.75rem;
-                    border-radius: 999px;
-                    background: #f1f5fb;
-                    color: #34527f;
-                    font-size: 0.75rem;
-                    font-weight: 700;
-                    letter-spacing: 0.04em;
-                    text-transform: uppercase;
-                    white-space: nowrap;
-                }
+        .review-card p {
+            margin-bottom: 0;
+            color: #5f6f83;
+            font-size: 1.18rem;
+            line-height: 1.65;
+        }
 
-                .review-google-badge .fa-google {
-                    color: #4285f4;
-                    font-size: 0.84rem;
-                }
+        @media (max-width: 991.98px) {
+            .client-gallery-section {
+                padding: 4.5rem 0;
+            }
 
-                .review-mini-stars {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 0.2rem;
-                    color: #f4b400;
-                    font-size: 0.82rem;
-                    line-height: 1;
-                    white-space: nowrap;
-                }
+            .client-gallery-frame {
+                max-width: 860px;
+            }
 
-                .review-card p {
-                    margin-bottom: 0;
-                    color: #5f6f83;
-                    font-size: 1.18rem;
-                    line-height: 1.65;
-                }
+            .reviews-summary-text,
+            .review-card p {
+                font-size: 1.05rem;
+            }
+        }
 
-                @media (max-width: 991.98px) {
-                    .client-gallery-section {
-                        padding: 4.5rem 0;
-                    }
+        @media (max-width: 767.98px) {
+            .client-gallery-header {
+                margin-bottom: 1.75rem;
+            }
 
-                    .client-gallery-frame {
-                        max-width: 860px;
-                    }
+            .client-gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+            }
 
-                    .reviews-summary-text,
-                    .review-card p {
-                        font-size: 1.05rem;
-                    }
-                }
+            .client-gallery-item.is-large,
+            .client-gallery-item.is-small {
+                grid-column: span 1;
+            }
 
-                @media (max-width: 767.98px) {
-                    .client-gallery-header {
-                        margin-bottom: 1.75rem;
-                    }
+            .client-gallery-item.is-large .client-gallery-photo,
+            .client-gallery-item.is-small .client-gallery-photo {
+                aspect-ratio: 4 / 5;
+            }
 
-                    .client-gallery-grid {
-                        grid-template-columns: repeat(2, minmax(0, 1fr));
-                        gap: 8px;
-                    }
+            .reviews-stars {
+                font-size: 1.12rem;
+            }
 
-                    .client-gallery-item.is-large,
-                    .client-gallery-item.is-small {
-                        grid-column: span 1;
-                    }
+            .review-card-meta {
+                justify-content: flex-start;
+            }
+        }
 
-                    .client-gallery-item.is-large .client-gallery-photo,
-                    .client-gallery-item.is-small .client-gallery-photo {
-                        aspect-ratio: 4 / 5;
-                    }
+        .services-legacy-block {
+            display: none;
+        }
 
-                    .reviews-stars {
-                        font-size: 1.12rem;
-                    }
+        .services-showcase {
+            padding: 5.5rem 0;
+            background: #ffffff;
+        }
 
-                    .review-card-meta {
-                        justify-content: flex-start;
-                    }
-                }
+        .services-showcase-header {
+            max-width: 48rem;
+            margin-bottom: 3.5rem;
+        }
 
-                #map {
-                    height: 400px;
+        .services-showcase-header .lead {
+            color: #5f6f83;
+            font-size: 1.12rem;
+            line-height: 1.8;
+        }
 
-                    width: 100%;
+        .services-list {
+            border-top: 1px solid rgba(0, 0, 0, 0.10);
+        }
 
-                }
-            </style>
+        .service-row {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            padding: 2.25rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+            transition: background 0.22s ease, padding-left 0.22s ease;
+            border-radius: 4px;
+        }
 
+        .service-row:hover {
+            background: #f4f8f4;
+            padding-left: 1.25rem;
+        }
 
+        .service-num {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #0c5810;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            min-width: 70px;
+            opacity: 0.22;
+            flex-shrink: 0;
+        }
 
-        </div>
-    </div>
+        .service-info {
+            flex: 1;
+        }
+
+        .service-title {
+            font-size: 1.65rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            color: #111111;
+        }
+
+        .service-desc {
+            color: #6b7280;
+            margin-bottom: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .service-book {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            background: #0c5810;
+            color: #ffffff !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            flex-shrink: 0;
+            transition: background 0.22s ease, transform 0.2s ease;
+        }
+
+        .service-book:hover {
+            background: #07380a;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 767.98px) {
+            .service-row {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .service-num {
+                font-size: 2rem;
+                min-width: auto;
+            }
+
+            .service-book {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .lounge-cta-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 560px;
+            margin: 0 0 5.5rem;
+            background-image: url("./assets/secco.jpeg");
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .lounge-cta-background {
+            display: none;
+        }
+
+        .lounge-cta-overlay {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            z-index: 1 !important;
+            background:
+                linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 71%) 48%, rgb(0 0 0 / 85%) 62%, rgb(0 0 0) 80%, rgb(0 0 0) 100%) !important;
+            pointer-events: none;
+        }
+
+        .lounge-cta-section::before,
+        .lounge-cta-section::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 16px;
+            z-index: 3;
+            pointer-events: none;
+            background-size: 16px 16px;
+            background-repeat: repeat-x;
+        }
+
+        .lounge-cta-section::before {
+            top: 0;
+            background-image:
+                linear-gradient(-45deg, transparent 8px, #ffffff 0),
+                linear-gradient(45deg, transparent 8px, #ffffff 0);
+            background-position: 0 0, 8px 0;
+        }
+
+        .lounge-cta-section::after {
+            bottom: 0;
+            background-image:
+                linear-gradient(-45deg, #ffffff 8px, transparent 0),
+                linear-gradient(45deg, #ffffff 8px, transparent 0);
+            background-position: 0 0, 8px 0;
+        }
+
+        .lounge-cta-inner {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: flex-end;
+            align-items: stretch;
+            min-height: 560px;
+            width: min(100%, 1500px);
+            margin: 0 auto;
+            padding: 0 4vw;
+        }
+
+        .lounge-cta-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 560px;
+            max-width: 42rem;
+            padding: 5.25rem 5.5rem 5.25rem 3rem;
+        }
+
+        .lounge-cta-kicker {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.35rem;
+            padding: 0.45rem 0.9rem;
+            border: 1px solid rgba(184, 137, 55, 0.42);
+            border-radius: 999px;
+            color: #d7a84d;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            background: rgba(184, 137, 55, 0.08);
+        }
+
+        .lounge-cta-title {
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-size: clamp(2.4rem, 4.9vw, 4.1rem);
+            font-weight: 700;
+            line-height: 0.98;
+            letter-spacing: -0.03em;
+            text-wrap: balance;
+        }
+
+        .lounge-cta-highlight {
+            color: #4caf58;
+        }
+
+        .lounge-cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 58px;
+            padding: 0.95rem 2.2rem;
+            border: 1px solid rgba(76, 175, 88, 0.55);
+            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.18);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+        }
+
+        .lounge-cta-button:hover,
+        .lounge-cta-button:focus {
+            color: #ffffff;
+            background: #0c5810;
+            border-color: #0c5810;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 991.98px) {
+            .services-showcase {
+                padding: 4.75rem 0;
+            }
+
+            .service-card-media {
+                min-height: 430px;
+            }
+
+            .service-card-body {
+                padding: 1.5rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.75rem;
+            }
+
+            .lounge-cta-inner,
+            .lounge-cta-content {
+                min-height: 520px;
+            }
+
+            .lounge-cta-content {
+                max-width: 38rem;
+                padding: 4rem 3rem 4rem 2rem;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .services-showcase {
+                padding: 4rem 0;
+            }
+
+            .services-showcase-header {
+                margin-bottom: 2.25rem;
+            }
+
+            .services-showcase-header .lead {
+                font-size: 1rem;
+            }
+
+            .service-card-media {
+                min-height: 380px;
+            }
+
+            .service-card-body {
+                padding: 1.25rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.55rem;
+            }
+
+            .service-card-meta {
+                font-size: 0.93rem;
+            }
+
+            .service-card-cta {
+                min-height: 48px;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .lounge-cta-section {
+                min-height: auto;
+                margin-bottom: 4rem;
+            }
+
+            .lounge-cta-inner,
+            .lounge-cta-content {
+                min-height: auto;
+            }
+
+            .lounge-cta-overlay {
+                background:
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.88) 100%),
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.88) 100%);
+            }
+
+            .lounge-cta-inner {
+                width: 100%;
+                padding: 0 1rem;
+                background: none;
+            }
+
+            .lounge-cta-content {
+                max-width: 100%;
+                padding: 4rem 0.35rem 3.2rem;
+            }
+
+            .lounge-cta-kicker {
+                margin-bottom: 1rem;
+                font-size: 0.72rem;
+            }
+
+            .lounge-cta-title {
+                margin-bottom: 1.5rem;
+                font-size: clamp(1.95rem, 9vw, 2.85rem);
+                line-height: 1;
+            }
+
+            .lounge-cta-button {
+                width: 100%;
+                min-height: 54px;
+                padding: 0.9rem 1.2rem;
+                justify-content: center;
+            }
+        }
+
+        #map {
+            display: block;
+            height: 400px;
+
+            width: 100%;
+
+            border: 0;
+
+        }
+    </style>
     <style data-typed-js-css="true" type="text/css">
         .typed-cursor {
             opacity: 1;
@@ -2320,11 +2561,164 @@
             }
         }
     </style>
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+
     <a class="whatsapp-float-btn"
-        href="https://wa.me/5545999858636?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+        href="https://wa.me/5545999858636"
         target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" title="Fale no WhatsApp">
         <span class="fab fa-whatsapp" aria-hidden="true"></span>
     </a>
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* ── SCROLL PROGRESS BAR ── */
+        gsap.to('#scrollProgress', {
+            scaleX: 1,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 0.3
+            }
+        });
+
+        /* ── HERO — timeline on load ── */
+        const heroTl = gsap.timeline({ delay: 0.15 });
+        heroTl
+            .from('.hero-eyebrow', {
+                opacity: 0,
+                x: -50,
+                duration: 0.9,
+                ease: 'power3.out'
+            })
+            .from('.hero-line', {
+                opacity: 0,
+                y: 80,
+                duration: 0.85,
+                stagger: 0.18,
+                ease: 'power3.out'
+            }, '-=0.5')
+            .from('.hero-subtitle', {
+                opacity: 0,
+                y: 30,
+                duration: 0.75,
+                ease: 'power2.out'
+            }, '-=0.4')
+            .from('.hero-cta-btn', {
+                opacity: 0,
+                y: 20,
+                scale: 0.93,
+                duration: 0.65,
+                ease: 'back.out(1.8)'
+            }, '-=0.45');
+
+        /* ── HERO PARALLAX ── */
+        gsap.to('.hero-redesign', {
+            backgroundPositionY: '35%',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.hero-redesign',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        /* ── SERVICES HEADER ── */
+        gsap.from('.services-showcase-header', {
+            scrollTrigger: { trigger: '.services-showcase', start: 'top 82%' },
+            opacity: 0,
+            y: 55,
+            duration: 0.85,
+            ease: 'power2.out'
+        });
+
+        /* ── SERVICE CARDS ── */
+        gsap.from('.service-card', {
+            scrollTrigger: { trigger: '.services-showcase', start: 'top 72%' },
+            opacity: 0,
+            y: 70,
+            duration: 0.75,
+            stagger: 0.14,
+            ease: 'power2.out'
+        });
+
+        /* ── GALLERY ITEMS ── */
+        gsap.from('.client-gallery-item', {
+            scrollTrigger: { trigger: '.client-gallery-grid', start: 'top 85%' },
+            opacity: 0,
+            scale: 0.88,
+            duration: 0.6,
+            stagger: 0.07,
+            ease: 'power2.out',
+            immediateRender: false
+        });
+
+        /* ── GALLERY TITLE ── */
+        gsap.from('.client-gallery-title', {
+            scrollTrigger: { trigger: '.client-gallery-header', start: 'top 88%' },
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            ease: 'power2.out',
+            immediateRender: false
+        });
+
+        /* ── REVIEWS SUMMARY ── */
+        gsap.from('.reviews-summary', {
+            scrollTrigger: { trigger: '.reviews-fix', start: 'top 85%' },
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            ease: 'power2.out',
+            immediateRender: false
+        });
+
+        /* ── REVIEW CARDS ── */
+        gsap.from('.review-card', {
+            scrollTrigger: { trigger: '.reviews-fix', start: 'top 85%' },
+            opacity: 0,
+            y: 55,
+            duration: 0.7,
+            stagger: 0.1,
+            ease: 'power2.out',
+            immediateRender: false
+        });
+
+        /* ── LOUNGE CTA ── */
+        gsap.from('.lounge-cta-title', {
+            scrollTrigger: { trigger: '.lounge-cta-section', start: 'top 78%' },
+            opacity: 0,
+            x: 70,
+            duration: 0.95,
+            ease: 'power3.out'
+        });
+
+        gsap.from('.lounge-cta-button', {
+            scrollTrigger: { trigger: '.lounge-cta-section', start: 'top 70%' },
+            opacity: 0,
+            y: 25,
+            duration: 0.65,
+            delay: 0.35,
+            ease: 'power2.out'
+        });
+
+        /* ── SECTION HEADINGS (generic) ── */
+        gsap.utils.toArray('.display-4').forEach(el => {
+            if (el.closest('.hero-redesign')) return;
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: 'top 88%' },
+                opacity: 0,
+                y: 45,
+                duration: 0.8,
+                ease: 'power2.out'
+            });
+        });
+    </script>
 </body>
 
 </html>
