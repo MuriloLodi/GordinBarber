@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://seccobarber.com.br/sitemap.xml
