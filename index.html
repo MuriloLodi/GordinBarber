@@ -47,7 +47,7 @@
             font-weight: 700;
             font-style: normal;
             font-stretch: normal;
-            font-display: auto;
+            font-display: swap;
         }
 
         @font-face {
@@ -56,7 +56,7 @@
             font-weight: 700;
             font-style: italic;
             font-stretch: normal;
-            font-display: auto;
+            font-display: swap;
         }
 
         @font-face {
@@ -65,7 +65,7 @@
             font-weight: 400;
             font-style: normal;
             font-stretch: normal;
-            font-display: auto;
+            font-display: swap;
         }
 
         @font-face {
@@ -74,7 +74,7 @@
             font-weight: 400;
             font-style: italic;
             font-stretch: normal;
-            font-display: auto;
+            font-display: swap;
         }
 
         @font-face {
@@ -83,17 +83,19 @@
             font-weight: 300;
             font-style: normal;
             font-stretch: normal;
-            font-display: auto;
+            font-display: swap;
         }
     </style>
     <script>
         try {
             Typekit.load({
-                async: false
+                async: true
             });
         } catch (e) { }
     </script>
 
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link href="./assets/fontawesome-all.min.css" rel="stylesheet" />
     <link href="./assets/jquery.fancybox.css" rel="stylesheet" />
     <link href="./assets/custombox.min.css" rel="stylesheet" />
@@ -102,14 +104,9 @@
     <link href="./assets/frontend-theme.css" rel="stylesheet" />
     <link href="./assets/frontend-custom.css" rel="stylesheet" />
     <link href="./assets/select2.min.css" rel="stylesheet" />
-    <link href="./assets/animate(1).min.css" rel="stylesheet" />
-
-
-
 
     <link href="./assets/dzsparallaxer.css" rel="stylesheet" />
     <link href="./assets/slick.css" rel="stylesheet" />
-    <link href="./assets/jquery.fancybox.css" rel="stylesheet" />
 
 
 
@@ -232,8 +229,7 @@
                     <a aria-label="Página inicial"
                         class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-default u-header__navbar-brand-text-white"
                         href="javascript:;" aria-disabled="true">
-                        <img alt="Logo da Secco Barber" class="ss-logo-main"
-                            src="./assets/img/secco_logo_transparente_cortada.png" />
+                        <picture><source srcset="./assets/img/secco_logo_transparente_cortada.webp" type="image/webp" /><img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" fetchpriority="high" /></picture>
                     </a>
 
 
@@ -241,16 +237,14 @@
                     <a aria-label="Página inicial"
                         class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-collapsed"
                         href="javascript:;" aria-disabled="true">
-                        <img alt="Logo da Secco Barber" class="ss-logo-main"
-                            src="./assets/img/secco_logo_transparente_cortada.png" />
+                        <picture><source srcset="./assets/img/secco_logo_transparente_cortada.webp" type="image/webp" /><img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" loading="lazy" /></picture>
                     </a>
 
 
                     <a aria-label="Página inicial"
                         class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-on-scroll"
                         href="javascript:;" aria-disabled="true">
-                        <img alt="Logo da Secco Barber" class="ss-logo-main"
-                            src="./assets/img/secco_logo_transparente_cortada.png" />
+                        <picture><source srcset="./assets/img/secco_logo_transparente_cortada.webp" type="image/webp" /><img alt="Logo da Secco Barber" class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" loading="lazy" /></picture>
                     </a>
 
 
@@ -1411,41 +1405,32 @@
                 <div class="client-gallery-frame">
                     <div class="client-gallery-grid" data-client-gallery>
                         <figure class="client-gallery-item is-large focus-top" data-client-gallery-slot>
-                            <img alt="Cliente sorrindo após o atendimento" class="client-gallery-photo"
-                                src="./assets/img/img1.jpeg" />
+                            <picture><source srcset="./assets/img/img1.webp" type="image/webp" /><img alt="Cliente sorrindo após o atendimento" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img1.jpeg" /></picture>
                         </figure>
                         <figure class="client-gallery-item is-large focus-center" data-client-gallery-slot>
-                            <img alt="Cliente com cabelo curto e barba aparada" class="client-gallery-photo"
-                                src="./assets/img/img2.jpeg" />
+                            <picture><source srcset="./assets/img/img2.webp" type="image/webp" /><img alt="Cliente com cabelo curto e barba aparada" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img2.jpeg" /></picture>
                         </figure>
                         <figure class="client-gallery-item is-large focus-right" data-client-gallery-slot>
-                            <img alt="Cliente com corte moderno e barba alinhada" class="client-gallery-photo"
-                                src="./assets/img/img3.jpeg" />
+                            <picture><source srcset="./assets/img/img3.webp" type="image/webp" /><img alt="Cliente com corte moderno e barba alinhada" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img3.jpeg" /></picture>
                         </figure>
 
                         <figure class="client-gallery-item is-small focus-left" data-client-gallery-slot>
-                            <img alt="Cliente com corte finalizado" class="client-gallery-photo"
-                                src="./assets/img/img4.jpeg" />
+                            <picture><source srcset="./assets/img/img4.webp" type="image/webp" /><img alt="Cliente com corte finalizado" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img4.jpeg" /></picture>
                         </figure>
                         <figure class="client-gallery-item is-small focus-top" data-client-gallery-slot>
-                            <img alt="Cliente após o atendimento" class="client-gallery-photo"
-                                src="./assets/img/img5.jpeg" />
+                            <picture><source srcset="./assets/img/img5.webp" type="image/webp" /><img alt="Cliente após o atendimento" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img5.jpeg" /></picture>
                         </figure>
                         <figure class="client-gallery-item is-small focus-center" data-client-gallery-slot>
-                            <img alt="Ambiente interno da barbearia" class="client-gallery-photo"
-                                src="./assets/img/img6.jpeg" />
+                            <picture><source srcset="./assets/img/img6.webp" type="image/webp" /><img alt="Ambiente interno da barbearia" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img6.jpeg" /></picture>
                         </figure>
                         <figure class="client-gallery-item is-small focus-right" data-client-gallery-slot>
-                            <img alt="Interior da Secco Barbearia" class="client-gallery-photo"
-                                src="./assets/img/img7.jpeg" />
+                            <picture><source srcset="./assets/img/img7.webp" type="image/webp" /><img alt="Interior da Secco Barbearia" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img7.jpeg" /></picture>
                         </figure>
                         <figure class="client-gallery-item is-small focus-bottom" data-client-gallery-slot>
-                            <img alt="Fachada da Secco Barbearia" class="client-gallery-photo"
-                                src="./assets/img/img8.jpeg" />
+                            <picture><source srcset="./assets/img/img8.webp" type="image/webp" /><img alt="Fachada da Secco Barbearia" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img8.jpeg" /></picture>
                         </figure>
                         <figure class="client-gallery-item is-small focus-left" data-client-gallery-slot>
-                            <img alt="Cliente satisfeito com o resultado" class="client-gallery-photo"
-                                src="./assets/img/img9.jpeg" />
+                            <picture><source srcset="./assets/img/img9.webp" type="image/webp" /><img alt="Cliente satisfeito com o resultado" class="client-gallery-photo" loading="lazy" decoding="async" src="./assets/img/img9.jpeg" /></picture>
                         </figure>
                     </div>
                 </div>
@@ -1509,7 +1494,7 @@
                                 </div>
                                 <div class="media ml-6">
                                     <div class="u-avatar mr-3">
-                                        <img alt="Foto de Gilmarzinhocantor Cantor" class="img-fluid rounded-circle"
+                                        <img alt="Foto de Gilmarzinhocantor Cantor" class="img-fluid rounded-circle" loading="lazy" decoding="async"
                                             src="./assets/men-profile-pic1.png" />
                                     </div>
                                     <div class="media-body">
@@ -1540,7 +1525,7 @@
                                 </div>
                                 <div class="media ml-6">
                                     <div class="u-avatar mr-3">
-                                        <img alt="Foto de Pedro Feder" class="img-fluid rounded-circle"
+                                        <img alt="Foto de Pedro Feder" class="img-fluid rounded-circle" loading="lazy" decoding="async"
                                             src="./assets/men-profile-pic2.png" />
                                     </div>
                                     <div class="media-body">
@@ -1569,7 +1554,7 @@
                                 </div>
                                 <div class="media ml-6">
                                     <div class="u-avatar mr-3">
-                                        <img alt="Foto de Edson Santos" class="img-fluid rounded-circle"
+                                        <img alt="Foto de Edson Santos" class="img-fluid rounded-circle" loading="lazy" decoding="async"
                                             src="./assets/img3.jpg" />
                                     </div>
                                     <div class="media-body">
@@ -1598,7 +1583,7 @@
                                 </div>
                                 <div class="media ml-6">
                                     <div class="u-avatar mr-3">
-                                        <img alt="Foto de Samuel Weiss" class="img-fluid rounded-circle"
+                                        <img alt="Foto de Samuel Weiss" class="img-fluid rounded-circle" loading="lazy" decoding="async"
                                             src="./assets/img4.jpg" />
                                     </div>
                                     <div class="media-body">
@@ -1770,7 +1755,7 @@
             <div class="row justify-content-lg-start mb-7">
                 <div class="col-sm-9 col-lg-4 mb-7">
                     <a class="d-inline-flex align-items-center mb-3" href="#inicio">
-                        <img class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" />
+                        <picture><source srcset="./assets/img/secco_logo_transparente_cortada.webp" type="image/webp" /><img class="ss-logo-main" src="./assets/img/secco_logo_transparente_cortada.png" loading="lazy" decoding="async" /></picture>
                     </a>
                     <p class="small text-white-70">Secco Barber é onde a barbearia tradicional encontra o seu lugar
                         favorito para relaxar. Ambiente descontraído, cerveja gelada e um corte que transforma.</p>
