@@ -38,13 +38,20 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HairSalon",
+      "@type": "BarberShop",
       "name": "Secco Barber",
       "description": "Barbearia masculina em Toledo PR. Cortes modernos, barba alinhada e lounge privativo.",
       "url": "https://seccobarber.com.br/",
       "telephone": "+5545999858636",
       "image": "https://seccobarber.com.br/assets/img/secco_caveira_favicon.png",
       "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "50"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "R. Três de Outubro, 273 — Vila Industrial",
@@ -79,7 +86,8 @@
         }
       ],
       "sameAs": [
-        "https://seccobarber.com.br/"
+        "https://www.instagram.com/seccobarber",
+        "https://www.google.com/maps/search/Secco+Barber+Toledo+PR"
       ]
     }
     </script>
@@ -1231,6 +1239,18 @@
                 color: #4caf58;
             }
 
+            .hero-seo-title {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+
             .hero-line {
                 display: block;
                 overflow: hidden;
@@ -1319,9 +1339,10 @@
             <div class="hero-content-box">
                 <span class="hero-eyebrow">Toledo &middot; Paran&aacute;</span>
                 <h1 class="hero-title">
-                    <span class="hero-line">Corte.</span>
-                    <span class="hero-line hero-title-gold">Estilo.</span>
-                    <span class="hero-line">Atitude.</span>
+                    <span class="hero-seo-title">Barbearia em Toledo PR — Secco Barber</span>
+                    <span class="hero-line" aria-hidden="true">Corte.</span>
+                    <span class="hero-line hero-title-gold" aria-hidden="true">Estilo.</span>
+                    <span class="hero-line" aria-hidden="true">Atitude.</span>
                 </h1>
                 <p class="hero-subtitle">
                     Ambiente descontra&iacute;do, cerveja gelada e um visual que faz voc&ecirc; sair diferente.
