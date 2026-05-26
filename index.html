@@ -155,17 +155,27 @@
 
     <link rel="preconnect" href="https://use.typekit.net" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link href="./assets/fontawesome-all.min.css" rel="stylesheet" />
-    <link href="./assets/jquery.fancybox.css" rel="stylesheet" />
-    <link href="./assets/custombox.min.css" rel="stylesheet" />
-    <link href="./assets/animate.min.css" rel="stylesheet" />
 
+    <link rel="preload" as="image" href="./assets/secco.jpeg" fetchpriority="high" />
+
+    <link href="./assets/fontawesome-all.min.css" rel="stylesheet" />
     <link href="./assets/frontend-theme.css" rel="stylesheet" />
     <link href="./assets/frontend-custom.css" rel="stylesheet" />
-    <link href="./assets/select2.min.css" rel="stylesheet" />
 
-    <link href="./assets/dzsparallaxer.css" rel="stylesheet" />
-    <link href="./assets/slick.css" rel="stylesheet" />
+    <link rel="preload" href="./assets/jquery.fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="./assets/custombox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="./assets/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="./assets/select2.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="./assets/dzsparallaxer.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="./assets/slick.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link href="./assets/jquery.fancybox.css" rel="stylesheet" />
+        <link href="./assets/custombox.min.css" rel="stylesheet" />
+        <link href="./assets/animate.min.css" rel="stylesheet" />
+        <link href="./assets/select2.min.css" rel="stylesheet" />
+        <link href="./assets/dzsparallaxer.css" rel="stylesheet" />
+        <link href="./assets/slick.css" rel="stylesheet" />
+    </noscript>
 
 
 
@@ -1400,18 +1410,16 @@
         <!-- <div class="red-logo top red-logo-mt-fix"></div> -->
 
 
-        <!-- Section de v�deo desativada at� o v�deo final ficar pronto
-        <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll animation-engine-js loaded dzsprx-readyall"
+        <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll animation-engine-js loaded dzsprx-readyall secco-video-parallax"
             data-options='{direction: "normal"}'>
 
-            <div class="divimage dzsparallaxer--target"
-                style='height: 130%; background-image: url("assets/secco.jpeg"); transform: translate3d(0px, -134.788px, 0px);'>
+            <div class="divimage dzsparallaxer--target secco-video-bg"
+                style='height: 130%; transform: translate3d(0px, -134.788px, 0px);'>
             </div>
 
             <div class="container text-center space-4 space-top-4 z-index-3">
-                <a class="js-fancybox d-inline-block u-media-player" data-animate-in="zoomIn" data-animate-out="zoomOut"
-                    data-caption="Secco Barber: Fa�a um favor a si mesmo" data-speed="700"
-                    data-src="https://www.youtube.com/watch?v=C7D5lEVxeSM" href="javascript:;">
+                <a class="js-secco-video-trigger d-inline-block u-media-player" href="javascript:;"
+                    aria-label="Reproduzir vídeo da Secco Barber">
                     <span class="u-media-player__icon u-media-player__icon--lg">
                         <span class="fas fa-play u-media-player__icon-inner"></span>
                     </span>
@@ -1420,7 +1428,114 @@
 
             <br />
         </div>
-        -->
+
+        <div class="secco-video-modal" id="seccoVideoModal" aria-hidden="true" role="dialog" aria-label="Vídeo Secco Barber">
+            <button type="button" class="secco-video-close" aria-label="Fechar vídeo">&times;</button>
+            <div class="secco-video-frame">
+                <video id="seccoVideoPlayer" controls playsinline preload="none" poster="./assets/secco.jpeg">
+                    <source src="./assets/seccovideo.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <style>
+            .secco-video-bg {
+                background-image: url("assets/secco.jpeg");
+            }
+            .secco-video-modal {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.95);
+                z-index: 9999;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem;
+            }
+            .secco-video-modal.is-open {
+                display: flex;
+            }
+            .secco-video-frame {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                max-width: 1280px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .secco-video-frame video {
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                background: #000;
+                border-radius: 4px;
+            }
+            .secco-video-close {
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                background: rgba(0, 0, 0, 0.5);
+                border: 0;
+                color: #fff;
+                font-size: 2.25rem;
+                line-height: 1;
+                cursor: pointer;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                padding: 0;
+            }
+            .secco-video-close:hover {
+                color: #ed1c24;
+                background: rgba(0, 0, 0, 0.8);
+            }
+            @media (max-width: 767px) {
+                .secco-video-modal {
+                    padding: 0;
+                }
+                .secco-video-frame video {
+                    border-radius: 0;
+                }
+            }
+        </style>
+
+        <script>
+            (function () {
+                var trigger = document.querySelector('.js-secco-video-trigger');
+                var modal = document.getElementById('seccoVideoModal');
+                var video = document.getElementById('seccoVideoPlayer');
+                var closeBtn = modal ? modal.querySelector('.secco-video-close') : null;
+                if (!trigger || !modal || !video || !closeBtn) return;
+
+                function open() {
+                    modal.classList.add('is-open');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                    try { video.play(); } catch (e) {}
+                }
+                function close() {
+                    modal.classList.remove('is-open');
+                    modal.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                    video.pause();
+                    video.currentTime = 0;
+                }
+
+                trigger.addEventListener('click', function (e) { e.preventDefault(); open(); });
+                closeBtn.addEventListener('click', close);
+                modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+                });
+            })();
+        </script>
 
 
 
@@ -2551,6 +2666,7 @@
             .lounge-cta-section {
                 min-height: auto;
                 margin-bottom: 4rem;
+                background-attachment: scroll;
             }
 
             .lounge-cta-inner,
